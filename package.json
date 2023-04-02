@@ -21,7 +21,6 @@
   "main": "./src/jshint.js",
   "dependencies": {
     "cli": "~1.0.0",
-    "exit": "0.1.x",
     "lodash": "~4.17.21",
     "minimatch": "~3.0.2",
     "strip-json-comments": "1.0.x"
