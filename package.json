@@ -18,8 +18,6 @@
   "scripts": {
     "browser-test-server": "node tests/helpers/browser/server",
     "build": "node bin/build",
-    "coverage": "istanbul -- cover ./node_modules/nodeunit/bin/nodeunit tests/unit",
-    "coverage-report": "npm run coverage && istanbul report html",
     "data": "node scripts/generate-identifier-data",
     "fetch-test262": "git submodule init && git submodule update",
     "pretest": "node ./bin/jshint src && jscs src",
@@ -46,8 +44,6 @@
   },
   "devDependencies": {
     "async": "~2.1.2",
-    "conventional-changelog": "0.4.x",
-    "conventional-github-releaser": "0.4.x",
     "jscs": "1.11.x",
     "mock-stdin": "0.3.x",
     "nodeunit": "0.9.x",
