@@ -8,7 +8,7 @@ var cliPath = path.resolve(__dirname, "../src/cli.js");
 var cli;
 
 exports.setUp = function(done) {
-  this.sinon = sinon.sandbox.create();
+  this.sinon = sinon.createSandbox();
 
   // The CLI module maintains some internal state in order to optimize
   // filesystem operations. This state can lead to undesirable test case
@@ -1071,7 +1071,7 @@ exports.extract = {
   withIndentReportLocation: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1112,7 +1112,7 @@ exports.extract = {
   withIndentReportLocationMultipleFragments: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1159,7 +1159,7 @@ exports.extract = {
   firstLine: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1203,7 +1203,7 @@ exports.extract = {
   sameLine: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1255,7 +1255,7 @@ exports.extract = {
   usingMultipleFiles: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1322,7 +1322,7 @@ exports.useStdin = {
   testFilenameOption: function (test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1360,7 +1360,7 @@ exports.useStdin = {
   testNoFilename: function(test) {
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
@@ -1397,7 +1397,7 @@ exports.useStdin = {
     test.expect(4);
     var rep = require("../examples/reporter.js");
     var errors = [];
-    this.sinon.stub(rep, "reporter", function (res) {
+    this.sinon.stub(rep, "reporter").callsFake(function (res) {
       errors = errors.concat(res);
     });
 
