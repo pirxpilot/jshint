@@ -4,7 +4,6 @@ var _                 = require("lodash");
 var cli               = require("cli");
 var path              = require("path");
 var minimatch         = require("minimatch");
-var htmlparser        = require("htmlparser2");
 var exit              = require("exit");
 var stripJsonComments = require("strip-json-comments");
 var JSHINT            = require("./jshint.js").JSHINT;
@@ -256,71 +255,8 @@ function isIgnored(fp, patterns) {
  *
  * @return {string} the extracted code
  */
-function extract(code, when) {
-  // A JS file won't start with a less-than character, whereas a HTML file
-  // should always start with that.
-  if (when !== "always" && (when !== "auto" || !/^\s*</.test(code)))
-    return code;
-
-  var inscript = false;
-  var index = 0;
-  var js = [];
-  var startOffset;
-
-  // Test if current tag is a valid <script> tag.
-  function onopen(name, attrs) {
-    if (name !== "script")
-      return;
-
-    if (attrs.type && !/text\/javascript/.test(attrs.type.toLowerCase()))
-      return;
-
-    // Mark that we're inside a <script> a tag and push all new lines
-    // in between the last </script> tag and this <script> tag to preserve
-    // location information.
-    inscript = true;
-    js.push.apply(js, code.slice(index, parser.endIndex).match(/\r\n|\n|\r/g));
-    startOffset = null;
-  }
-
-  function onclose(name) {
-    if (name !== "script" || !inscript)
-      return;
-
-    inscript = false;
-    index = parser.startIndex;
-    startOffset = null;
-  }
-
-  function ontext(data) {
-    if (!inscript)
-      return;
-
-    var lines = data.split(/\r\n|\n|\r/);
-
-    if (!startOffset) {
-      lines.some(function(line) {
-        if (!line) return;
-        startOffset = /^(\s*)/.exec(line)[1];
-        return true;
-      });
-    }
-
-    // check for startOffset again to remove leading white space from first line
-    if (startOffset) {
-      lines = lines.map(function(line) {
-        return line.replace(startOffset, "");
-      });
-      data = lines.join("\n");
-    }
-
-    js.push(data); // Collect JavaScript code.
-  }
-
-  var parser = new htmlparser.Parser({ onopentag: onopen, onclosetag: onclose, ontext: ontext });
-  parser.parseComplete(code);
-
-  return js.join("");
+function extract(code) {
+  return code;
 }
 
 /**
