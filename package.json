@@ -27,13 +27,12 @@
     "github-release": "conventional-github-releaser -p jshint",
     "test-all": "npm run test-node && npm run test-browser && npm run test-262",
     "test-262": "node tests/test262",
-    "test-browser": "node tests/browser",
     "test-cli": "nodeunit tests/cli.js",
     "test-node": "npm run test-unit && npm run test-cli && npm run test-regression",
     "test-regression": "nodeunit tests/regression",
     "test-unit": "nodeunit tests/unit",
     "test-website": "node tests/website.js",
-    "test": "npm run test-node && npm run test-browser"
+    "test": "npm run test-node"
   },
   "main": "./src/jshint.js",
   "dependencies": {
@@ -47,7 +46,6 @@
   },
   "devDependencies": {
     "async": "~2.1.2",
-    "browserify": "9.x",
     "conventional-changelog": "0.4.x",
     "conventional-github-releaser": "0.4.x",
     "coveralls": "2.11.x",
@@ -60,8 +58,8 @@
     "results-interpreter": "~1.0.0",
     "sinon": "1.12.x",
     "test262-stream": "~1.3.0",
-    "unicode-5.2.0": "^0.7.5",
-    "unicode-11.0.0": "0.7.x"
+    "unicode-11.0.0": "0.7.x",
+    "unicode-5.2.0": "^0.7.5"
   },
   "license": "MIT",
   "preferGlobal": true,
