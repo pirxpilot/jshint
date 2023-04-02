@@ -16,19 +16,7 @@
     "jshint": "bin/jshint"
   },
   "scripts": {
-    "browser-test-server": "node tests/helpers/browser/server",
-    "build": "node bin/build",
-    "data": "node scripts/generate-identifier-data",
-    "fetch-test262": "git submodule init && git submodule update",
-    "pretest": "node ./bin/jshint src && jscs src",
-    "test-all": "npm run test-node && npm run test-browser && npm run test-262",
-    "test-262": "node tests/test262",
-    "test-cli": "nodeunit tests/cli.js",
-    "test-node": "npm run test-unit && npm run test-cli && npm run test-regression",
-    "test-regression": "nodeunit tests/regression",
-    "test-unit": "nodeunit tests/unit",
-    "test-website": "node tests/website.js",
-    "test": "npm run test-node"
+    "test": "make check"
   },
   "main": "./src/jshint.js",
   "dependencies": {
