@@ -457,11 +457,6 @@ exports.group = {
     ]);
     test.equal(run.args[0][0].reporter, rep.reporter);
 
-    cli.interpret([
-      "node", "jshint", "file.js", "--jslint-reporter"
-    ]);
-    test.equal(run.args[1][0].reporter, rep.reporter);
-
     test.done();
   },
 
@@ -473,11 +468,6 @@ exports.group = {
       "node", "jshint", "file.js", "--reporter", "checkstyle"
     ]);
     test.equal(run.args[0][0].reporter, rep.reporter);
-
-    cli.interpret([
-      "node", "jshint", "file.js", "--checkstyle-reporter"
-    ]);
-    test.equal(run.args[1][0].reporter, rep.reporter);
 
     test.done();
   },

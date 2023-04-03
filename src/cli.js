@@ -36,36 +36,7 @@ var OPTIONS = {
     "string",
     "never"
   ],
-
-  // Deprecated options.
-  "jslint-reporter": [
-    "jslint-reporter",
-    deprecated("Use a jslint compatible reporter", "--reporter=jslint")
-  ],
-
-  "checkstyle-reporter": [
-    "checkstyle-reporter",
-    deprecated("Use a CheckStyle compatible XML reporter", "--reporter=checkstyle")
-  ]
 };
-
-/**
- * Returns the same text but with a deprecation notice.
- * Useful for options descriptions.
- *
- * @param {string} text
- * @param {string} alt (optional) Alternative command to include in the
- *                 deprecation notice.
- *
- * @returns {string}
- */
-function deprecated(text, alt) {
-  if (!alt) {
-    return text + " (DEPRECATED)";
-  }
-
-  return text + " (DEPRECATED, use " + alt + " instead)";
-}
 
 /**
  * Tries to find a configuration file in either project directory
@@ -556,13 +527,11 @@ var exports = {
     switch (true) {
     // JSLint reporter
     case options.reporter === "jslint":
-    case options["jslint-reporter"]:
       options.reporter = "./reporters/jslint_xml.js";
       break;
 
     // CheckStyle (XML) reporter
     case options.reporter === "checkstyle":
-    case options["checkstyle-reporter"]:
       options.reporter = "./reporters/checkstyle.js";
       break;
 
