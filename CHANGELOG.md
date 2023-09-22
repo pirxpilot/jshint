@@ -1,3 +1,26 @@
+
+3.0.0 / 2023-09-22
+==================
+
+ * replace `cli` with `optymista`
+ * stop supporting using stdin
+ * remove deprecated command line options
+ * upgrade regenerate to 1.4.2
+ * upgrade minimatch to 8.0.2
+ * upgrade strip-json-comments to ~3
+ * remove exit dependency
+ * remove extract functionality
+ * upgrade test unit
+ * update sinon
+ * add github action to run lint and test
+ * remove console-browserify
+ * remove puppeteer
+ * remove release tools
+ * remove legacy test coverage tools
+ * remove browserify and various browser build artifacts
+ * remove unused files
+ * change name to @pirxpilot/jshint
+
 <a name="2.13.6"></a>
 ## [2.13.6](https://github.com/jshint/jshint/compare/2.13.5...v2.13.6) (2022-11-11)
 
