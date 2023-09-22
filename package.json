@@ -1,5 +1,5 @@
 {
-  "name": "jshint",
+  "name": "@pirxpilot/jshint",
   "version": "2.13.6",
   "homepage": "http://jshint.com/",
   "description": "Static analysis tool for JavaScript",
@@ -10,13 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jshint/jshint.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jshint/jshint/issues"
+    "url": "git+https://github.com/pirxpilot/jshint.git"
   },
   "bin": {
-    "jshint": "./bin/jshint"
+    "jshint": "bin/jshint"
   },
   "scripts": {
     "browser-test-server": "node tests/helpers/browser/server",
@@ -71,7 +68,6 @@
   "files": [
     "bin",
     "data",
-    "dist",
     "src"
   ]
 }
