@@ -20,9 +20,9 @@
   },
   "main": "./src/jshint.js",
   "dependencies": {
-    "cli": "~1.0.0",
     "lodash": "~4.17.21",
     "minimatch": "~8.0.2",
+    "optymista": "^0.1.0",
     "strip-json-comments": "~3"
   },
   "devDependencies": {

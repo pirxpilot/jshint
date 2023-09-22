@@ -85,8 +85,7 @@ exports.group = {
         .withArgs(sinon.match(/file5\.json$/)).returns(true)
         .withArgs(sinon.match(/file6\.json$/)).returns(true);
 
-      var _cli = require("cli");
-      this.out = this.sinon.stub(_cli, "error");
+      this.out = this.sinon.stub(console, "error");
 
       done();
     },
@@ -402,10 +401,8 @@ exports.group = {
   testReporter: function (test) {
     test.expect(5);
 
-    var _cli = require("cli");
     var rep = require("../examples/reporter.js");
-    var run = this.sinon.stub(cli, "run");
-    var out = this.sinon.stub(_cli, "error");
+    var out = this.sinon.stub(console, "error");
     var dir = __dirname + "/../examples/";
     this.sinon.stub(process, "cwd").returns(dir);
 
@@ -424,7 +421,7 @@ exports.group = {
     }
 
     // Test successful attempt.
-    run.restore();
+    // run.restore();
     this.sinon.stub(rep, "reporter");
     this.sinon.stub(fsUtils, "exists")
       .withArgs(sinon.match(/file\.js$/)).returns(true);
