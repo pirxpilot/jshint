@@ -517,7 +517,7 @@ var exports = {
     // Custom reporter
     case options.reporter !== undefined:
       options.reporter = path.resolve(process.cwd(), options.reporter);
-    }
+  }
 
     var reporter;
     if (options.reporter) {

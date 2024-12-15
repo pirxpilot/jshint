@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "async": "~2.1.2",
-    "jscs": "1.11.x",
+    "jscs": "3.0.7",
     "nodeunit": "0.11.3",
     "regenerate": "1.4.2",
     "results-interpreter": "~1.0.0",

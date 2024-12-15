@@ -456,9 +456,9 @@ var scopeManager = function(state, predefined, exported, declared) {
             if (shadowed) {
               shadowed["(unused)"] &= defBinding["(unused)"];
 
-            // "Hoist" the variable to the parent block, decorating the binding
-            // so that future references, though technically valid, can be
-            // reported as "out-of-scope" in the absence of the `funcscope`
+              // "Hoist" the variable to the parent block, decorating the binding
+              // so that future references, though technically valid, can be
+              // reported as "out-of-scope" in the absence of the `funcscope`
             // option.
             } else {
               defBinding["(useOutsideOfScope)"] =
