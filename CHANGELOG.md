@@ -1,4 +1,11 @@
 
+3.0.2 / 2024-12-15
+==================
+
+ * upgrade jscs
+ * upgrade optymista and minimatch
+ * update README
+
 3.0.1 / 2023-09-22
 ==================
 
