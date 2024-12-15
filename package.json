@@ -21,13 +21,13 @@
   "main": "./src/jshint.js",
   "dependencies": {
     "lodash": "~4.17.21",
-    "minimatch": "~8.0.2",
-    "optymista": "^0.1.0",
+    "minimatch": "~10",
+    "optymista": "~1",
     "strip-json-comments": "~3"
   },
   "devDependencies": {
     "async": "~2.1.2",
-    "jscs": "1.11.x",
+    "jscs": "3.0.7",
     "nodeunit": "0.11.3",
     "regenerate": "1.4.2",
     "results-interpreter": "~1.0.0",

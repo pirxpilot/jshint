@@ -240,7 +240,7 @@ Lexer.prototype = {
           value: "..."
         };
       }
-      /* falls through */
+    /* falls through */
     case "(":
     case ")":
     case ";":
@@ -282,7 +282,7 @@ Lexer.prototype = {
     // We're at the end of input
     case "":
       return null;
-    }
+  }
 
     // Peek more characters
 
@@ -499,12 +499,12 @@ Lexer.prototype = {
                 self.ignoringLinterErrors = false;
                 isSpecial = false;
                 break;
-              }
             }
+          }
           }
 
           commentType = str;
-        }
+      }
       });
 
       return {
@@ -1120,7 +1120,7 @@ Lexer.prototype = {
       allowNewLine = true;
       char = "";
       break;
-    }
+  }
 
     return { char: char, jump: jump, allowNewLine: allowNewLine };
   },
@@ -1319,7 +1319,7 @@ Lexer.prototype = {
         allowNewLine = false;
         var char = this.peek();
         var jump = 1; // A length of a jump, after we're done
-                      // parsing this character.
+        // parsing this character.
 
         if (char < " ") {
           // Warn about a control character in a string.
@@ -2068,7 +2068,7 @@ Lexer.prototype = {
           break;
         default:
           this.prereg = true;
-        }
+      }
 
         obj = Object.create(state.syntax[value] || state.syntax["(error)"]);
       }
@@ -2226,7 +2226,7 @@ Lexer.prototype = {
           isProperty: state.tokens.curr.id === "."
         }, checks, function() { return true; });
 
-        /* falls through */
+      /* falls through */
       case Token.Keyword:
         return create("(identifier)", token.value, state.tokens.curr.id === ".", token);
 
@@ -2295,7 +2295,7 @@ Lexer.prototype = {
 
       default:
         return create("(punctuator)", token.value);
-      }
+    }
     }
   }
 };

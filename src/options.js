@@ -428,21 +428,21 @@ exports.bool = {
      */
     iterator    : true,
 
-     /**
-     * This option suppresses warnings about invalid `typeof` operator values.
-     * This operator has only [a limited set of possible return
-     * values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof).
-     * By default, JSHint warns when you compare its result with an invalid
-     * value which often can be a typo.
-     *
-     *     // 'fuction' instead of 'function'
-     *     if (typeof a == "fuction") { // Invalid typeof value 'fuction'
-     *       // ...
-     *     }
-     *
-     * Do not use this option unless you're absolutely sure you don't want
-     * these checks.
-     */
+    /**
+    * This option suppresses warnings about invalid `typeof` operator values.
+    * This operator has only [a limited set of possible return
+    * values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof).
+    * By default, JSHint warns when you compare its result with an invalid
+    * value which often can be a typo.
+    *
+    *     // 'fuction' instead of 'function'
+    *     if (typeof a == "fuction") { // Invalid typeof value 'fuction'
+    *       // ...
+    *     }
+    *
+    * Do not use this option unless you're absolutely sure you don't want
+    * these checks.
+    */
     notypeof    : true,
 
     /**
@@ -793,7 +793,7 @@ exports.bool = {
     onecase     : true, // if one case switch statements should be allowed
     regexp      : true, // if the . should not be allowed in regexp literals
     regexdash   : true  // if unescaped first/last dash (-) inside brackets
-                        // should be tolerated
+    // should be tolerated
   }
 };
 
@@ -1018,13 +1018,13 @@ exports.val = {
   latedef      : false,
 
   ignore       : false, // start/end ignoring lines of code, bypassing the lexer
-                        //   start    - start ignoring lines, including the current line
-                        //   end      - stop ignoring lines, starting on the next line
-                        //   line     - ignore warnings / errors for just a single line
-                        //              (this option does not bypass the lexer)
+  //   start    - start ignoring lines, including the current line
+  //   end      - stop ignoring lines, starting on the next line
+  //   line     - ignore warnings / errors for just a single line
+  //              (this option does not bypass the lexer)
 
   ignoreDelimiters: false, // array of start/end delimiters used to ignore
-                           // certain chunks from code
+  // certain chunks from code
 
   /**
    * This option is used to specify the ECMAScript version to which the code

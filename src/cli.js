@@ -3,7 +3,7 @@
 var _                 = require("lodash");
 var optymista         = require("optymista").optymista;
 var path              = require("path");
-var minimatch         = require("minimatch");
+var minimatch         = require("minimatch").minimatch;
 var stripJsonComments = require("strip-json-comments");
 var JSHINT            = require("./jshint.js").JSHINT;
 var defReporter       = require("./reporters/default").reporter;
@@ -517,7 +517,7 @@ var exports = {
     // Custom reporter
     case options.reporter !== undefined:
       options.reporter = path.resolve(process.cwd(), options.reporter);
-    }
+  }
 
     var reporter;
     if (options.reporter) {

@@ -604,7 +604,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -622,7 +622,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -640,7 +640,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -657,7 +657,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -669,7 +669,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -687,7 +687,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           return;
         }
 
@@ -725,7 +725,7 @@ var JSHINT = (function() {
             break;
           default:
             error("E002", directiveToken);
-          }
+        }
           if (!hasParsedCode(state.funct)) {
             error("E055", directiveToken, "esversion");
           }
@@ -1090,7 +1090,7 @@ var JSHINT = (function() {
       case "with":
         error("E024", state.tokens.next, state.tokens.next.value);
         return false;
-      }
+    }
     }
 
     if (state.tokens.next.type === "(punctuator)") {
@@ -1105,7 +1105,7 @@ var JSHINT = (function() {
 
         error("E024", state.tokens.next, state.tokens.next.value);
         return false;
-      }
+    }
     }
     return true;
   }
@@ -2220,10 +2220,10 @@ var JSHINT = (function() {
         break;
       }
 
-      /* falls through */
+    /* falls through */
     default:
       state.funct["(verb)"] = null;
-    }
+  }
 
     inblock = b;
     if (ordinary && state.option.noempty && (!a || a.length === 0)) {
@@ -2769,7 +2769,7 @@ var JSHINT = (function() {
             !state.funct["(scope)"].isPredefined(c.value)) {
             warning("W055", state.tokens.curr);
           }
-        }
+      }
       } else {
         if (c.id === "?." && !c.paren) {
           error("E024", c, "?.");
@@ -4011,7 +4011,7 @@ var JSHINT = (function() {
       if (!state.option.boss) {
         warning("W084", token);
       }
-    }
+  }
   }
 
   /**
@@ -4048,7 +4048,7 @@ var JSHINT = (function() {
     }
   }
 
-//object literals
+  //object literals
   (function(x) {
     x.nud = function(context) {
       var b, f, i, params, t, isGeneratorMethod = false, nextVal;
@@ -4997,7 +4997,7 @@ var JSHINT = (function() {
           if (!state.tokens.curr.caseFallsThrough) {
             warning("W086", state.tokens.curr, "case");
           }
-        }
+      }
 
         advance("case");
         expression(context, 0);
@@ -5027,7 +5027,7 @@ var JSHINT = (function() {
           if (seenCase && !state.tokens.curr.caseFallsThrough) {
             warning("W086", state.tokens.curr, "default");
           }
-        }
+      }
 
         advance("default");
         g = true;
@@ -5063,7 +5063,7 @@ var JSHINT = (function() {
           default:
             error("E025", state.tokens.curr);
             return;
-          }
+        }
         } else {
           /* istanbul ignore else */
           if (state.tokens.curr.id === ":") {
@@ -5076,7 +5076,7 @@ var JSHINT = (function() {
           }
         }
         indent -= state.option.indent;
-      }
+    }
     }
   }).labelled = true;
 
@@ -6295,7 +6295,7 @@ var JSHINT = (function() {
           /* istanbul ignore next */
           return false;
         }
-        };
+      };
   };
 
 
@@ -6384,7 +6384,7 @@ var JSHINT = (function() {
       break;
     default:
       error("E003", state.tokens.next);
-    }
+  }
   }
 
   /**
@@ -6648,7 +6648,7 @@ var JSHINT = (function() {
         }
 
         statements(0);
-      }
+    }
 
       if (state.tokens.next.id !== "(end)") {
         quit("E041", state.tokens.curr);
