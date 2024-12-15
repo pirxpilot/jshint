@@ -21,8 +21,8 @@
   "main": "./src/jshint.js",
   "dependencies": {
     "lodash": "~4.17.21",
-    "minimatch": "~8.0.2",
-    "optymista": "^0.1.0",
+    "minimatch": "~10",
+    "optymista": "~1",
     "strip-json-comments": "~3"
   },
   "devDependencies": {
