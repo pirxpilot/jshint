@@ -1,4 +1,9 @@
 
+3.1.0 / 2025-01-03
+==================
+
+ * add support for nullish coalescing assignment
+
 3.0.2 / 2024-12-15
 ==================
 
